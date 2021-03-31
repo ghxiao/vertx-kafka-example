@@ -14,7 +14,7 @@ import java.util.UUID;
  */
 public class MetricsVerticle extends AbstractVerticle {
 
-  public static final String KAFKA_TOPIC_NAME = "os_metrics";
+  public static final String KAFKA_TOPIC_NAME = "os-metrics";
   private OperatingSystemMXBean systemMBean;
   private KafkaWriteStream<String, JsonObject> producer;
 
