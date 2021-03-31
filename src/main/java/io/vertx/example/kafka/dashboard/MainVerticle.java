@@ -57,7 +57,7 @@ public class MainVerticle extends AbstractVerticle {
   }
 
   @Override
-  public void stop() throws Exception {
+  public void stop() {
     kafkaCluster.shutdown();
   }
 }

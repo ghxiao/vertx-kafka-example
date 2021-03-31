@@ -58,6 +58,6 @@ public class DashboardVerticle extends AbstractVerticle {
     });
 
     // Subscribe to Kafka
-    consumer.subscribe(Collections.singleton("the_topic"));
+    consumer.subscribe(Collections.singleton(MetricsVerticle.KAFKA_TOPIC_NAME));
   }
 }

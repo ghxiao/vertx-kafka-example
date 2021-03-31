@@ -14,11 +14,12 @@ import java.util.UUID;
  */
 public class MetricsVerticle extends AbstractVerticle {
 
+  public static final String KAFKA_TOPIC_NAME = "os_metrics";
   private OperatingSystemMXBean systemMBean;
   private KafkaWriteStream<String, JsonObject> producer;
 
   @Override
-  public void start() throws Exception {
+  public void start() {
     systemMBean = ManagementFactory.getPlatformMXBean(OperatingSystemMXBean.class);
 
     // A random identifier
@@ -35,12 +36,12 @@ public class MetricsVerticle extends AbstractVerticle {
       JsonObject metrics = new JsonObject();
       metrics.put("CPU", systemMBean.getProcessCpuLoad());
       metrics.put("Mem", systemMBean.getTotalPhysicalMemorySize() - systemMBean.getFreePhysicalMemorySize());
-      producer.write(new ProducerRecord<>("the_topic", new JsonObject().put(pid, metrics)));
+      producer.write(new ProducerRecord<>(KAFKA_TOPIC_NAME, new JsonObject().put(pid, metrics)));
     });
   }
 
   @Override
-  public void stop() throws Exception {
+  public void stop() {
     if (producer != null) {
       producer.close();
     }
