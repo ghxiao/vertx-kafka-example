@@ -16,7 +16,7 @@ The link:src/main/java/io/vertx/example/kafka/dashboard/MainVerticle.java[MainVe
 you should start as it starts a Kafka broker and then configures the DashboardVerticle and the MetricsVerticle
 with their consumer and producer config.
 
-Run the `MainVerticle` main method and then open your browser at http://localhost:8080/
+Run the `MainVerticle` main method and then open your browser at http://localhost:8888/
 
 In real usage the Kafka broker would probably be managed externally and the `DashboardVerticle` /
 `MetricsVerticle` executed separately with their own configuration.

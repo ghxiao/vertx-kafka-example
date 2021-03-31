@@ -4,12 +4,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>io.vertx</groupId>
-  <artifactId>kafka-examples</artifactId>
+  <groupId>org.ghxiao</groupId>
+  <artifactId>vertx-kafka-example</artifactId>
   <version>3.9.0</version>
 
   <properties>
-    <kafka.version>2.4.0</kafka.version>
+    <vertx.version>4.0.3</vertx.version>
+    <kafka.version>2.7.0</kafka.version>
     <debezium.version>0.8.3.Final</debezium.version>
   </properties>
 
@@ -18,17 +19,17 @@
     <dependency>
       <groupId>io.vertx</groupId>
       <artifactId>vertx-core</artifactId>
-      <version>${project.version}</version>
+      <version>${vertx.version}</version>
     </dependency>
     <dependency>
       <groupId>io.vertx</groupId>
       <artifactId>vertx-web</artifactId>
-      <version>${project.version}</version>
+      <version>${vertx.version}</version>
     </dependency>
     <dependency>
       <groupId>io.vertx</groupId>
       <artifactId>vertx-kafka-client</artifactId>
-      <version>${project.version}</version>
+      <version>${vertx.version}</version>
     </dependency>
 
     <!-- For running Kafka easily -->
@@ -52,7 +53,7 @@
     <dependency>
       <groupId>io.vertx</groupId>
       <artifactId>examples-utils</artifactId>
-      <version>${project.version}</version>
+      <version>${vertx.version}</version>
       <optional>true</optional>
     </dependency>
 
@@ -102,7 +103,7 @@
               </transformers>
               <artifactSet>
               </artifactSet>
-              <outputFile>${project.build.directory}/${project.artifactId}-${project.version}-fat.jar</outputFile>
+              <outputFile>${project.build.directory}/${project.artifactId}-${vertx.version}-fat.jar</outputFile>
             </configuration>
           </execution>
         </executions>
